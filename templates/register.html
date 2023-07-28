@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Enregistrement</title>
+    <link rel="stylesheet" type="text/css" href="static/styles.css">
+</head>
+<body>
+    <h1>Création du compte</h1>
+    <form action="/" method="POST">
+        <label for="email">Email :</label>
+        <input type="text" id="email" name="email" required>
+        <label for="password">Mot de passe :</label>
+        <input type="text" id="password" name="password" required>
+        <input type="submit" value="Créer">
+    </form>
+    {% if success %}
+        <p style="color: mediumseagreen;">{{ success }}</p>
+    {% endif %}
+    {% if error %}
+        <p style="color: orangered;">{{ error }}</p>
+    {% endif %}
+</body>
+</html>
