@@ -1,14 +1,6 @@
 # Meteo Information
 A small project developed by myself to gain a deeper understanding of working with data and JSON using Python.
 
-# Usage
-To run the application, execute the following command in your terminal:
-```
-python3 app.py
-```
-
-Afterward, you can access the web app locally using your preferred web browser.
-
 ## Usage/Examples
 
 To build the app:
