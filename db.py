@@ -10,6 +10,8 @@ def connect_to_db():
         host=os.getenv("host"),
         user=os.getenv("user"),
         password=os.getenv("password"),
+        port=int(os.getenv("db_port")),
+        database=os.getenv("database")
     )
     return my_db
 
