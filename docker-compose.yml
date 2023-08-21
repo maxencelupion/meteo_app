@@ -1,0 +1,30 @@
+services:
+  api_python:
+    build:
+      context: .
+      dockerfile: app.Dockerfile
+    container_name: api_python
+    ports:
+      - "8000:5000"
+    links:
+      - db
+    depends_on:
+      - db
+  db:
+    image: mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+      MYSQL_DATABASE: meteo
+      MYSQL_USER: example
+      MYSQL_PASSWORD: example
+    ports:
+      - "3306:3306"
+    command: --init-file /data/application/init.sql
+    volumes:
+      - ./db/init.sql:/data/application/init.sql
+      - meteo_db_data:/var/lib/mysql
+
+volumes:
+  meteo_db_data:
+
