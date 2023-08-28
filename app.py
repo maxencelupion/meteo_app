@@ -30,8 +30,11 @@ def verify_jwt(func):
             return 'Token invalide. Veuillez vous reconnecter.', 401
     return wrapper
 
+@app.route('/', methods=['GET'])
+def frontpage():
+    return render_template('frontpage.html')
 
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/register', methods=['GET', 'POST'])
 def register():
     if request.method == 'POST':
         email = request.form.get('email')

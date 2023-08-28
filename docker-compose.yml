@@ -19,7 +19,7 @@ services:
       MYSQL_USER: example
       MYSQL_PASSWORD: example
     ports:
-      - "3306:3306"
+      - "3307:3306"
     command: --init-file /data/application/init.sql
     volumes:
       - ./db/init.sql:/data/application/init.sql
